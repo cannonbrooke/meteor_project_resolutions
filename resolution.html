@@ -6,16 +6,19 @@
     <div class="container">
       <header>
         <h1>Monthly Resolutions</h1>
+        <br>
+        <h1>Create username to post!</h1>
 
         <label class="hide-finished">
-          <input type="checkbox" checked="{{hideFinished}}">
+          <input type="checkbox" checked="{{hideFinished}}"> <!-- creates box for hiding -->
           Hide Finished Resolutions
         </label>
-
+        {{#if currentUser}} <!-- checks if user is logged in -->
         <form class="new-resolution">
           <input type="text" name="title" placeholder="a new resolution">
           <input type="submit" value="submit">
         </form>
+        {{/if}} <!--ends loop -->
       </header>
 
         <ul>
@@ -23,6 +26,7 @@
             {{> resolution}}
           {{/each}}
         </ul>
+        {{> loginButtons}} <!-- adds login buttons -->
     </div>
 </body>
 

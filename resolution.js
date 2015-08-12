@@ -45,6 +45,10 @@ if (Meteor.isClient) {      //all you need to display database collections
     }
   });
 
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY" //adjusts sign in
+  });
+
 }
 
 if (Meteor.isServer) {
